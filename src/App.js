@@ -17,8 +17,8 @@ const [value, setValue] = useState("");
 const [meaning, setMeaning] = useState("");
 
   const handleSearch = () => {
-    const searchWord = value;
-    const foundWord = data.find((item) => item.word === searchWord);
+    const searchWord = value.toLocaleLowerCase();
+    const foundWord = data.find((item) => item.word.toLocaleLowerCase() === searchWord);
       if(foundWord){
         setMeaning(foundWord.meaning);
       }
