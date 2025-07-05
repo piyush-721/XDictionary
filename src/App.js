@@ -18,15 +18,14 @@ const [meaning, setMeaning] = useState("");
 
   const handleSearch = () => {
     const searchWord = value;
-    for(let i = 0; i < data.length; i++){
-      if(data[i].word === searchWord){
-        setMeaning(data[i].meaning);
-        break;
+    const foundWord = data.find((item) => item.word === searchWord);
+      if(foundWord){
+        setMeaning(foundWord.meaning);
       }
       else{
         setMeaning("Word not found in the dictionary.");
       }
-    }
+    
   }
 
   return (
